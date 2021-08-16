@@ -41,7 +41,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     try {
       // At this point, lets validate the filtering of image
 
-      if(url){
+      if(url){ 
+        //@ts-ignore
         const filteredImage = await filterImageFromURL(url);
         res.status(200).sendFile(filteredImage, () => {
           deleteLocalFiles([filteredImage]);
